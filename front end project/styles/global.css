@@ -1,0 +1,117 @@
+/* الأنماط العامة */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: #007BFF;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto 1fr; /* العمود الأول للشعار، والثاني للقائمة */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* محاذاة القائمة إلى اليمين */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.btn {
+  background: #004080;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+  nav {
+    grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة */
+    gap: 10px; /* مسافة بين العناصر */
+    text-align: center; /* توسيط العناصر */
+  }
+
+  nav ul {
+    justify-content: center; /* توسيط القائمة */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+  }
+
+  nav ul li {
+    margin: 5px 10px; /* تقليل المسافة بين عناصر القائمة */
+  }
+
+  .logo img {
+    height: 40px; /* تصغير حجم الشعار */
+  }
+
+  .btn {
+    font-size: 1rem; /* تصغير حجم النص في الأزرار */
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    padding: 0 10px; /* تقليل الحشو */
+  }
+
+  nav ul li {
+    margin-left: 15px; /* تقليل المسافة بين عناصر القائمة */
+  }
+
+  .logo img {
+    height: 45px; /* تصغير حجم الشعار قليلاً */
+  }
+}

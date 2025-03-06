@@ -1,0 +1,131 @@
+/* جعل body يأخذ ارتفاع الصفحة بالكامل */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* جعل body يعمل كحاوية Flexbox */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* جعل المحتوى الرئيسي يتمدد لملء المساحة المتاحة */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تثبيت الفوتر في الأسفل */
+footer {
+  flex-shrink: 0;
+}
+
+/* أنماط قسم Signup */
+.signup {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: grid; /* استخدام Grid للنموذج */
+  gap: 15px; /* المسافة بين العناصر */
+}
+
+.signup h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  grid-column: 1 / -1; /* جعل العنوان يمتد عبر جميع الأعمدة */
+}
+
+.signup input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  grid-column: 1 / -1; /* جعل حقول الإدخال تمتد عبر جميع الأعمدة */
+}
+
+.signup button {
+  width: 100%;
+  padding: 10px;
+  background: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  grid-column: 1 / -1; /* جعل الزر يمتد عبر جميع الأعمدة */
+}
+
+.signup button:hover {
+  background: #0056b3;
+}
+
+.signup p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  grid-column: 1 / -1; /* جعل النص يمتد عبر جميع الأعمدة */
+}
+
+.signup a {
+  color: #004080;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+/* التصميم المتجاوب */
+@media (max-width: 768px) {
+  .signup {
+    max-width: 90%; /* تقليل العرض ليتناسب مع الشاشات الصغيرة */
+    padding: 15px;
+  }
+
+  .signup h1 {
+    font-size: 1.5rem; /* تصغير حجم العنوان على الشاشات الصغيرة */
+  }
+
+  .signup input {
+    padding: 8px; /* تصغير حجم الحقول */
+  }
+
+  .signup button {
+    padding: 8px; /* تصغير حجم الزر */
+    font-size: 0.9rem; /* تصغير حجم النص في الزر */
+  }
+
+  .signup p {
+    font-size: 0.8rem; /* تصغير حجم النص */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .signup {
+    max-width: 350px; /* تقليل العرض قليلاً على الشاشات المتوسطة */
+  }
+
+  .signup h1 {
+    font-size: 1.8rem; /* تصغير حجم العنوان قليلاً */
+  }
+
+  .signup input {
+    padding: 9px; /* تصغير حجم الحقول قليلاً */
+  }
+
+  .signup button {
+    padding: 9px; /* تصغير حجم الزر قليلاً */
+    font-size: 1rem; /* تصغير حجم النص في الزر قليلاً */
+  }
+
+  .signup p {
+    font-size: 0.85rem; /* تصغير حجم النص قليلاً */
+  }
+}
